@@ -24,7 +24,7 @@ const Hero = () => {
         <img
           src={ProfilePicture}
           alt="Your Name"
-          className="w-48 h-50 rounded-full mx-auto mb-8 border-4 border-white shadow-lg"
+          className=" md:w-60 md:h-60 w-48 h-50 rounded-full mx-auto mb-8 border-4 border-white shadow-lg"
         />
         <h1 className="text-5xl font-bold mb-4">Hi, I'm Kshitij Kamble</h1>
         <h2 className="text-3xl mb-8">

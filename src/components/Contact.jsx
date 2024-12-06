@@ -20,10 +20,10 @@ const Contact = () => {
     // Use EmailJS to send the form data to your email
     try {
       const response = await emailjs.send(
-        process.env.REACT_APP_EMAILJS_USER_ID,
-    process.env.REACT_APP_EMAILJS_TEMPLATE_ID, // Template ID from environment variable
-    formData,
-     // Replace with your EmailJS user ID
+        'service_qpm0xde', // Replace with your service ID
+        'template_loart7s', // Replace with your service ID
+        formData,
+        'q3OY2wtj-Vvl6BDgh' // Replace with your EmailJS user ID
       )
       alert('Email sent successfully')
 
