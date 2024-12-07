@@ -4,7 +4,7 @@ const AboutMe = () => {
         <div className="text-center px-6 md:px-12 max-w-4xl mx-auto">
           <h1 className="text-4xl font-semibold mb-4">About Me</h1>
           <p>
-  Hi, I'm [Your Name], a final year engineering student passionate about web development. I specialize in the MERN stack (MongoDB, Express, React, Node.js) and am always eager to solve complex problems.
+  Hi, I'm Kshitij Kamble, a final year engineering student passionate about Fullstack development. I specialize in the MERN stack (MongoDB, Express, React, Node.js) and am always eager to solve complex problems.
 </p>
 <p className="text-lg mb-4">
   I enjoy creating full-stack web applications, and I have worked on several personal projects such as V-Ideas, a platform for showcasing student projects, and Autostart, a car showroom management system. I aim to continue improving my skills and contribute to meaningful projects.

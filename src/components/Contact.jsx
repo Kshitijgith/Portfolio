@@ -15,15 +15,14 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData.email)
-    console.log(formData.name)
+    
     // Use EmailJS to send the form data to your email
     try {
       const response = await emailjs.send(
-        'service_qpm0xde', // Replace with your service ID
-        'template_loart7s', // Replace with your service ID
+        import.meta.env.VITE_SERVICE_ID, // Replace with your service ID
+        import.meta.env.VITE_TEMPLATE_ID, // Replace with your service ID
         formData,
-        'q3OY2wtj-Vvl6BDgh' // Replace with your EmailJS user ID
+        import.meta.env.VITE_USER_ID // Replace with your EmailJS user ID
       )
       alert('Email sent successfully')
 

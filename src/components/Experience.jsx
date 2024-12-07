@@ -60,7 +60,7 @@ const experiences = [
   {
     id: 3,
     title: 'IEEE Student Member',
-    company: 'University Chapter',
+    company: 'Collge',
     date: 'Aug 2022 - Jun 2023',
     description: 'Worked on IEEE VIT website and contributed for holding tech events.',
     icon: <FaGraduationCap />,
