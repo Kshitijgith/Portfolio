@@ -5,27 +5,25 @@ Welcome to my GitHub portfolio repository! This repository contains the source c
 
 🛠️ Tech Stack
 
-Frontend: React.js, Vite, Tailwind CSS
-
-Backend: Node.js, Express.js
-
-Databases: MySQL, PostgreSQL, MongoDB
-
-Deployment: Vercel, Render, Netlify, AWS
-
-Other Tools: Git, GitHub, VS Code
+- Frontend: React.js, Vite, Tailwind CSS
+- Email Sending: Brevo
+- Deployment: Vercel
 
 📌 Features
 
-Responsive design for all devices
+- Responsive design for all devices
+- Showcases my skills and experience
+- Displays my projects and achievements
+- Contact section for easy communication
 
-Showcases my skills and experience
+📬 Email Integration
 
-Displays my projects and achievements
+This portfolio uses Brevo for email sending. It enables users to easily get in touch with me through the contact form, and the form sends emails directly to my inbox.
 
-Contact section for easy communication
+---
 
 Thank you for visiting my portfolio repository! 🚀
+
 
 
 
