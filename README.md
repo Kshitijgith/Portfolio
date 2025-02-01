@@ -25,14 +25,6 @@ Displays my projects and achievements
 
 Contact section for easy communication
 
-📫 Contact Me
-
-GitHub: github.com/Kshitijgith
-
-LinkedIn: linkedin.com/in/kshitij-kamble12
-
-Email: kshitijkamble884@gmail.com
-
 Thank you for visiting my portfolio repository! 🚀
 
 
