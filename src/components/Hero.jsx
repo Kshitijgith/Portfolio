@@ -20,14 +20,14 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-gray-500 text-white dark:from-gray-800 dark:to-black dark:text-gray-300">
-      <div className="text-center">
+      <div className="text-center  ">
         <img
           src={ProfilePicture}
           alt="Your Name"
-          className=" md:w-60 md:h-60 w-48 h-50 rounded-full mx-auto mb-8 border-4 border-white shadow-lg"
+          className=" md:w-64 md:h-64 sm:w-60 sm:h-64 w-60 h-64 rounded-full mx-auto mb-8 border-4 border-white shadow-lg"
         />
-        <h1 className="text-5xl font-bold mb-4">Hi, I'm Kshitij Kamble</h1>
-        <h2 className="text-3xl mb-8">
+        <h1 className="text-5xl font-bold mb-4 text-black dark:text-gray-300">Hi, I'm Kshitij Kamble</h1>
+        <h2 className="text-3xl mb-8 text-black dark:text-gray-300">
           I'm a <span ref={typedRef}></span>
         </h2>
         <a
