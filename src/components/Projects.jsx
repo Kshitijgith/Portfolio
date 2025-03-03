@@ -19,6 +19,16 @@ const projects = [
   },
   {
     id: 2,
+    title: 'URL Shortener',
+    description: 'A simple and efficient URL shortening service.',
+    image: URLShortener,
+    techStack: ['React', 'Node.js', 'MongoDB', 'Express','Redis'],
+    liveDemo: 'https://url-shortner-steel-theta.vercel.app/',
+    github: 'https://github.com/Kshitijgith/URL-Shortner',
+  },
+
+  {
+    id: 3,
     title: 'Hostel Bank',
     description: 'A platform for managing and splitting day-to-day transactions among hostel mates.',
     image: HostelBank,
@@ -27,22 +37,13 @@ const projects = [
     github: 'https://github.com/Kshitijgith/Hostel-Bank1',
   },
   {
-    id: 3,
+    id: 4,
     title: 'Autostart',
     description: 'A car showroom management system for automatic car start functionality.',
     image: AutoStart,
     techStack: ['React', 'Node.js', 'Express', 'MongoDB'],
     liveDemo: 'https://showroom-client.vercel.app/',
     github: 'https://github.com/Kshitijgith/showroomClient',
-  },
-  {
-    id: 4,
-    title: 'URL Shortener',
-    description: 'A simple and efficient URL shortening service.',
-    image: URLShortener,
-    techStack: ['React', 'Node.js', 'MongoDB', 'Express'],
-    liveDemo: 'https://url-shortner-steel-theta.vercel.app/',
-    github: 'https://github.com/Kshitijgith/URL-Shortner',
   },
 ];
 
