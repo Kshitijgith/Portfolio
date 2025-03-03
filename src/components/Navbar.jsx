@@ -1,8 +1,17 @@
-import { useState } from 'react'
-import { FaBars, FaTimes } from 'react-icons/fa'
+import { useState, useEffect } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar = ({ activeSection }) => {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navItems = [
     { name: 'Home', href: '#home' },
@@ -11,53 +20,21 @@ const Navbar = ({ activeSection }) => {
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
     { name: 'Contact', href: '#contact' },
-  ]
+  ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md">
+    <nav
+      className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 backdrop-blur-lg bg-opacity-60 ${
+        isScrolled ? 'bg-gray-900/80 shadow-lg' : 'bg-transparent'
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <div className="flex items-center">
-            <a href="#" className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-              Kshitij Kamble
-            </a>
-          </div>
-          {/* Desktop Menu (Hidden on Mobile) */}
-          <div className="hidden md:flex items-center space-x-4">
-            {navItems.map((item) => (
-              <a
-                key={item.name}
-                href={item.href}
-                className={`${
-                  activeSection === item.name.toLowerCase()
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-700 dark:text-gray-300 hover:bg-indigo-600 hover:text-white'
-                } px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300`}
-              >
-                {item.name}
-              </a>
-            ))}
-          </div>
-          {/* Mobile Menu Toggle Button */}
-          <div className="sm:block z-50 hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-700 dark:text-gray-300 hover:text-white hover:bg-indigo-600 focus:outline-none "
-            >
-              <span className="sr-only">Open main menu</span>
-              {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Mobile Menu (Visible on small screens, Hidden on md and larger) */}
-      {isOpen && (
-        <div className="fixed inset-0 bg-gray-900 bg-opacity-75 z-40 sm:block md:hidden">
-          <div className="flex justify-end p-4">
-            
-          </div>
-          <div className="flex flex-col items-center space-y-6 pt-12">
+          <a href="#" className="text-2xl font-bold text-indigo-400 tracking-wide">
+            Kshitij Kamble
+          </a>
+          
+          <div className="hidden md:flex items-center space-x-6">
             {navItems.map((item) => (
               <a
                 key={item.name}
@@ -66,17 +43,41 @@ const Navbar = ({ activeSection }) => {
                   activeSection === item.name.toLowerCase()
                     ? 'bg-indigo-600 text-white'
                     : 'text-gray-300 hover:bg-indigo-600 hover:text-white'
-                } px-3 py-2 rounded-md text-lg font-medium transition-colors duration-300`}
-                onClick={() => setIsOpen(false)}
+                } px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300`}
               >
                 {item.name}
               </a>
             ))}
           </div>
-        </div>
-      )}
-    </nav>
-  )
-}
 
-export default Navbar
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-indigo-600 transition-all"
+          >
+            {isOpen ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={`fixed inset-0 bg-gray-900 bg-opacity-90 transform transition-transform duration-500 ${
+          isOpen ? 'translate-x-0' : '-translate-x-full'
+        } flex flex-col items-center justify-center space-y-6 z-40 md:hidden`}
+      >
+        {navItems.map((item) => (
+          <a
+            key={item.name}
+            href={item.href}
+            className="text-gray-300 text-2xl font-semibold hover:text-indigo-400 transition-all duration-300"
+            onClick={() => setIsOpen(false)}
+          >
+            {item.name}
+          </a>
+        ))}
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;
