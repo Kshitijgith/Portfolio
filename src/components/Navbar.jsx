@@ -18,7 +18,7 @@ const Navbar = ({ activeSection }) => {
     { name: 'About', href: '#about' },
     { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
-    { name: 'Experience', href: '#experience' },
+    { name: 'Extra Activities', href: '#experience' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -61,10 +61,16 @@ const Navbar = ({ activeSection }) => {
 
       {/* Mobile Menu */}
       <div
-        className={`fixed inset-0 bg-gray-900 bg-opacity-90 transform transition-transform duration-500 ${
+        className={`fixed inset-0 flex flex-col justify-evenly sm:h-screen bg-gray-900 bg-opacity-90 transform transition-transform duration-500 ${
           isOpen ? 'translate-x-0' : '-translate-x-full'
-        } flex flex-col items-center justify-center space-y-6 z-40 md:hidden`}
+        } flex flex-col items-center justify-center  z-40 md:hidden`}
       >
+        <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="md:hidden p-2 rounded-md text-gray-300 hover:text-white hover:bg-indigo-600 transition-all"
+          >
+            {<></> ? <FaTimes className="h-6 w-6" /> : <FaBars className="h-6 w-6" />}
+          </button>
         {navItems.map((item) => (
           <a
             key={item.name}
